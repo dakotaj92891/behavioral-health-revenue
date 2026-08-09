@@ -12,7 +12,8 @@ html {
 
 body {
   margin: 0;
-  background: #020617;
+  background: #05070b;
+  color: #f5f7fa;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -20,8 +21,27 @@ body {
   box-sizing: border-box;
 }
 
+::selection {
+  background: rgba(45, 212, 191, 0.3);
+  color: white;
+}
+
 input,
 textarea,
 button {
   font: inherit;
+}
+
+.noise {
+  background-image: radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.glow {
+  box-shadow: 0 0 80px rgba(20, 184, 166, .12);
+}
+
+.glass {
+  background: rgba(12, 16, 23, .72);
+  backdrop-filter: blur(18px);
 }
