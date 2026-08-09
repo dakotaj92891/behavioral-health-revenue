@@ -41,14 +41,20 @@ function cleanupDuplicates(now: number) {
 
 export async function POST(request: Request) {
   try {
-    const contentLength = Number(request.headers.get('content-length') ?? 0);
-    if (contentLength > MAX_BODY_BYTES) {
+    let rawBody: string;
+    try {
+      rawBody = await request.text();
+    } catch {
+      return json({ ok: false, error: 'Invalid request.' }, 400);
+    }
+
+    if (new TextEncoder().encode(rawBody).byteLength > MAX_BODY_BYTES) {
       return json({ ok: false, error: 'Request is too large.' }, 413);
     }
 
     let body: unknown;
     try {
-      body = await request.json();
+      body = JSON.parse(rawBody);
     } catch {
       return json({ ok: false, error: 'Invalid request.' }, 400);
     }
