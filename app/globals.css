@@ -2,46 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: dark;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: #05070b;
-  color: #f5f7fa;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-::selection {
-  background: rgba(45, 212, 191, 0.3);
-  color: white;
-}
-
-input,
-textarea,
-button {
-  font: inherit;
-}
-
-.noise {
-  background-image: radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px);
-  background-size: 22px 22px;
-}
-
-.glow {
-  box-shadow: 0 0 80px rgba(20, 184, 166, .12);
-}
-
-.glass {
-  background: rgba(12, 16, 23, .72);
-  backdrop-filter: blur(18px);
-}
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #05070b; color: #f5f7fa; font-family: Arial, Helvetica, sans-serif; }
+* { box-sizing: border-box; }
+::selection { background: rgba(45, 212, 191, 0.3); color: white; }
+input, textarea, button { font: inherit; }
+.noise { background-image: radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px); background-size: 22px 22px; }
+.glow { box-shadow: 0 0 80px rgba(20, 184, 166, .12); }
+.glass { background: rgba(12, 16, 23, .72); backdrop-filter: blur(18px); }
+.eyebrow { color: #5eead4; font-size: .72rem; font-weight: 800; letter-spacing: .25em; text-transform: uppercase; }
+.section-title { margin-top: 1rem; color: white; font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.02; letter-spacing: -.035em; font-weight: 650; }
+.field { width: 100%; border: 1px solid rgba(255,255,255,.1); border-radius: .75rem; background: rgba(255,255,255,.035); padding: .875rem 1rem; font-size: .875rem; color: white; outline: none; }
+.field::placeholder { color: #475569; }
+.field:focus { border-color: rgba(45,212,191,.5); background: rgba(255,255,255,.06); }
+.source { display: block; border: 1px solid rgba(255,255,255,.1); border-radius: 1rem; background: rgba(255,255,255,.02); padding: 1.25rem; color: white; font-weight: 650; transition: border-color .2s, background .2s; }
+.source:hover { border-color: rgba(45,212,191,.3); background: rgba(255,255,255,.04); }
+.source span { display: block; margin-top: .5rem; color: #64748b; font-size: .875rem; line-height: 1.5; font-weight: 400; }
